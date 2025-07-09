@@ -1,0 +1,38 @@
+.header {
+    @apply flex max-w-[90%] mx-auto px-[10px] py-[20px] ;
+
+}
+.header ul{
+    @apply m-0 p-0 list-none overflow-hidden rounded-[10px];
+}
+.header .logo{
+    @apply float-left block text-[1.5em] mt-[10px] leading-[normal] no-underline;
+}
+.header .logo-name{
+    @apply py-0 px-[10px] font-bold ![font-variant-ligatures:none] font-agustina;
+}
+.menu{
+     @apply font-google-sans flex items-center justify-end;
+
+}
+.header .menu{
+    @apply clear-both max-h-0 cursor-pointer transition-[max-height] duration-200 ease-out;
+}
+.header li a {
+    @apply block py-[20px] px-[15px] no-underline;
+}
+
+
+
+
+
+  @media (min-width: 48em) {
+    .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header .menu {
+    max-height: none;
+  }
+  }
