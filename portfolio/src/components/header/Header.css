@@ -1,18 +1,28 @@
 .header { 
   @apply block max-w-[90%] mx-auto py-5 px-2.5; 
 }
-.header li a { @apply block py-5 px-4 no-underline; }
-.header .logo { @apply float-left block text-xl mt-2.5 leading-normal no-underline; }
-.header .logo-name { @apply px-2.5 font-bold; }
+.header li a { 
+    @apply block py-5 px-4 no-underline;
+    font-weight:normal;
+    color: #374151;
+    transition: color 0.2s ease-in-out;
+}
+.header .menu li a.active {
+    color: #111827;
+    text-shadow: 0 0 1px currentColor; /* The "fake bold" trick */
+    
+}
+.header .logo { @apply float-left block text-xl mt-2.5 leading-normal no-underline text-[1.5em]; }
+.header .logo-name { @apply px-2.5 font-bold font-agustina; }
 
 /* Menu container */
 .header .menu {
-  @apply clear-both max-h-0 cursor-pointer overflow-hidden transition-all duration-300 ease-out;
+  @apply clear-both max-h-0 cursor-pointer overflow-hidden transition-[max-height] duration-300 ease-out rounded-lg;
 }
 
 /* This class is added by React to open the menu */
 .header .menu.menu-open {
-  @apply max-h-[500px] mt-4 rounded-lg; /* Increased max-height to be safe for more items */
+  @apply max-h-[500px]  ; /* Increased max-height to be safe for more items */
 }
 
 /* Hamburger Icon button */

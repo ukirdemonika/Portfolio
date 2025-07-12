@@ -196,3 +196,4 @@ export const materialTealTheme = {
 };
 
 export const selectedTheme = purpleTheme;
+;

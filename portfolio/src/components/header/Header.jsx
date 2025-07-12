@@ -67,9 +67,7 @@ const Header = (props) => {
             <li key={item.id}>
               <NavLink
                 to={item.path}
-                style={({ isActive }) => ({
-                  fontWeight: isActive ? 'bold' : 'normal',
-                })}
+                className={({isActive}) => (isActive ? 'active' : '')}
                 onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
                 onMouseOut={(event) => onMouseOut(event)}
                 // 6. Add this onClick to close the menu when a link is clicked on mobile
