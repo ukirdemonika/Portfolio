@@ -21,23 +21,35 @@
 }
 
 .header .menu-icon .navicon {
-  @apply w-[18px] h-[2px] block relative bg-gray-800 transition-all duration-200 ease-out;
+  @apply w-[18px] h-[2px] block bg-gray-800 transition-all duration-200 ease-out;
+  position: relative;
 }
 
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
   content: "";
-  @apply w-full h-full block absolute bg-inherit transition-all duration-200 ease-out;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background: inherit;
+  transition: all 0.2s ease-out;
+  display: block;
 }
 
 .header .menu-icon .navicon:before { top: 5px; }
 .header .menu-icon .navicon:after { top: -5px; }
 
 
-/* When menu-icon has 'open' class, make middle bar transparent */
 .header .menu-icon.open .navicon {
-  @apply bg-transparent;
+  background: transparent !important;
+  position: relative;
 }
+.header .menu-icon.open .navicon:before,
+.header .menu-icon.open .navicon:after {
+  background: #1f2937 !important; /* Use your desired color, here Tailwind's gray-800 */
+}
+
 
 /* When menu-icon has 'open' class, rotate lines to form an 'X' */
 .header .menu-icon.open .navicon:before {
