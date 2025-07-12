@@ -15,7 +15,8 @@ const onMouseOut = (event) => {
   el.style.backgroundColor = "transparent";
 };
 function Header(props) {
-  const { theme } = props.theme;
+  const { theme } = props;
+ 
   const path = "/home"
 
   const navItems = [
@@ -37,7 +38,13 @@ function Header(props) {
             </span>
             <span>/&gt;</span>
           </NavLink>
-          <nav>
+          {/* for mobile view */}
+          <input className='menu-btn' type='checkbox' id='menu-btn' />
+          <label className='menu-icon' htmlFor='menu-btn'>
+            <span className='navicon'></span>
+          </label>
+          {/* {------} */}
+          {/* <nav> */}
             <ul className="menu" style={{ 
               backgroundColor: theme?.body,
               boxShadow: `${theme?.headerColor} 0px 0px 15px -2px`
@@ -46,7 +53,9 @@ function Header(props) {
                 <li key={item.id}>
                   <NavLink
                     to={item.path}
-                    activeStyle={{ fontWeight: "bold" }}
+                    style={({ isActive }) => ({
+                      fontWeight: isActive ? "bold" : "normal"
+                    })}
                     onMouseEnter={(event)=>onMouseEnter(event,theme.highlight)}
                     onMouseOut={(event) => onMouseOut(event)}
                   >
@@ -55,7 +64,7 @@ function Header(props) {
                 </li>
               ))}
             </ul>
-          </nav>
+          {/* </nav> */}
       </header>
     </div>
 

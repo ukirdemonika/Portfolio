@@ -6,7 +6,7 @@ import WhatIDo from "../../containers/whatIDo/WhatIDo";
 function Home({theme}) {
   return (
     <div>
-      <Header theme={theme} />
+      {/* <Header theme={theme} /> */}
       <Greeting theme={theme} />
       <WhatIDo theme={theme} />
       <TopButton theme={theme} />
