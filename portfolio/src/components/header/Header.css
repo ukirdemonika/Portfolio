@@ -1,128 +1,64 @@
-/* Import Tailwind's base, components, and utilities */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* 
-  Converted CSS using @apply.
-  The core "checkbox hack" logic for the mobile menu remains as native CSS 
-  because Tailwind utilities cannot replicate the :checked sibling selector (~).
-*/
-
-/* header */
-.header {
-  @apply block max-w-[90%] mx-auto py-5 px-2.5;
+.header { 
+  @apply block max-w-[90%] mx-auto py-5 px-2.5; 
 }
+.header li a { @apply block py-5 px-4 no-underline; }
+.header .logo { @apply float-left block text-xl mt-2.5 leading-normal no-underline; }
+.header .logo-name { @apply px-2.5 font-bold; }
 
-.header ul {
-  @apply m-0 p-0 overflow-hidden list-none rounded-lg;
-}
-
-.grey-color {
-  @apply text-gray-500;
-}
-
-.header li a {
-  @apply block py-5 px-4 no-underline;
-}
-
-.header .logo {
-  @apply float-left block text-xl mt-2.5 leading-normal no-underline;
-}
-
-.header .logo-name {
-  @apply px-2.5 font-bold font-agustina;
-}
-
-/* menu */
-.menu {
-  @apply font-google-sans;
-}
-
+/* Menu container */
 .header .menu {
-  @apply clear-both max-h-0 cursor-pointer transition-[max-height] duration-200 ease-out;
+  @apply clear-both max-h-0 cursor-pointer overflow-hidden transition-all duration-300 ease-out;
 }
 
-/* menu icon */
+/* This class is added by React to open the menu */
+.header .menu.menu-open {
+  @apply max-h-[500px] mt-4 rounded-lg; /* Increased max-height to be safe for more items */
+}
+
+/* Hamburger Icon button */
 .header .menu-icon {
-  @apply float-right cursor-pointer select-none py-7 px-5 relative inline-block;
+  @apply float-right cursor-pointer select-none py-7 px-5 relative inline-block border-none bg-transparent;
 }
 
 .header .menu-icon .navicon {
-  @apply w-[18px] h-[2px] block relative bg-gray-800 transition-colors duration-200 ease-out;
+  @apply w-[18px] h-[2px] block relative bg-gray-800 transition-all duration-200 ease-out;
 }
 
-/* --- NATIVE CSS: Pseudo-elements for hamburger lines --- */
 .header .menu-icon .navicon:before,
 .header .menu-icon .navicon:after {
   content: "";
   @apply w-full h-full block absolute bg-inherit transition-all duration-200 ease-out;
 }
 
-.header .menu-icon .navicon:before {
-  top: 5px;
+.header .menu-icon .navicon:before { top: 5px; }
+.header .menu-icon .navicon:after { top: -5px; }
+
+
+/* When menu-icon has 'open' class, make middle bar transparent */
+.header .menu-icon.open .navicon {
+  @apply bg-transparent;
 }
 
-.header .menu-icon .navicon:after {
-  top: -5px;
-}
-
-
-/*
- * --- CORRECTED NATIVE CSS: Checkbox Hack for Menu Toggle ---
- * This is the corrected section.
- */
-.header .menu-btn {
-  @apply hidden;
-}
-
-/* When the checkbox is checked, show the menu */
-.header .menu-btn:checked ~ .menu {
-  max-height: 370px;
-}
-
-/* When checked, make the middle navicon line transparent */
-.header .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent;
-}
-
-/* 
-  When checked, move top/bottom lines to the center and rotate them to form an 'X'.
-  This is the key fix. Both `top` and `transform` must be applied.
-*/
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
+/* When menu-icon has 'open' class, rotate lines to form an 'X' */
+.header .menu-icon.open .navicon:before {
   transform: rotate(-45deg);
   top: 0;
 }
-
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
+.header .menu-icon.open .navicon:after {
   transform: rotate(45deg);
   top: 0;
 }
-/* --- END CORRECTED NATIVE CSS --- */
 
-
-/* Responsive Styles using Tailwind's screen prefixes (md:) */
-@media (min-width: 48em) { /* 768px */
-  .header li {
-    @apply float-left;
-  }
-  .header {
-    @apply flex items-center justify-between;
-  }
-  .header .menu {
-    @apply max-h-full;
+/* Responsive Styles (for desktop view) */
+@media (min-width: 768px) {
+  .header { @apply flex items-center justify-between; }
+  .header li { @apply float-left; }
+  .header .menu, .header .menu.menu-open {
+    /* On desktop, the menu is always visible and does not need to transition */
+    @apply max-h-full mt-0 clear-none;
   }
   .header .menu-icon {
+    /* Hide hamburger icon on desktop */
     @apply hidden;
-  }
-}
-
-@media (max-width: 960px) and (min-width: 768px) {
-  .header {
-    @apply text-xs;
-  }
-  .header .menu {
-    @apply max-h-full;
   }
 }
