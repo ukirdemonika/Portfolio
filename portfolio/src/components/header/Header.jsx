@@ -3,7 +3,7 @@
 import React, { useState } from 'react'; // 1. Import useState
 import { NavLink } from 'react-router-dom';
 import './Header.css'; // Make sure your CSS is imported
-import { greeting } from '../../portFolio';
+import { greeting } from '../../portFolio-data/greeting-data';
 
 
 const Header = (props) => {
@@ -67,7 +67,7 @@ const Header = (props) => {
             <li key={item.id}>
               <NavLink
                 to={item.path}
-                className={({isActive}) => (isActive ? 'active' : '')}
+                className={({ isActive }) => (isActive ? 'active' : '')}
                 onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
                 onMouseOut={(event) => onMouseOut(event)}
                 // 6. Add this onClick to close the menu when a link is clicked on mobile

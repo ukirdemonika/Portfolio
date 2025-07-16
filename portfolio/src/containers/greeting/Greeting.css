@@ -1,0 +1,43 @@
+.greet-main {
+  @apply w-[90%] py-5 px-2.5 mx-auto;
+}
+.greeting-main {
+    @apply mt-10 flex flex-col md:flex-row;
+}
+.greeting-section {
+  @apply flex-1 flex flex-col mb-[30px];
+}
+.greeting-text-div { 
+  @apply order-2 md:order-1;
+}
+.greeting-image-div {
+  @apply rounded-full w-fit h-fit mx-auto order-1 md:order-2;
+}
+.profile-image {  
+  width: 250px;
+  height: 250px;
+  object-fit: cover;   
+  @apply block mx-auto rounded-full;
+  @screen sm {
+    width: 300px;
+    height: 300px;
+  }
+  @screen md {
+    width: 400px;
+    height: 400px;
+  }
+}
+.greeting-text {  
+  @apply mt-0 text-center text-3xl font-google-sans leading-[1.1] mb-0 md:mt-10 md:text-left md:text-[50px] lg-desktop:text-[70px];
+}
+.greeting-pronouns {  
+  @apply mt-0 text-center text-[25px] leading-[30px] font-google-sans font-bold italic md:text-left md:text-[30px];
+}
+.greeting-text-p {
+  @apply text-center text-base leading-normal font-google-sans mr-0 font-medium  md:text-left md:text-[20px] md:mr-10 lg-desktop:text-[28px] lg-desktop:leading-[28px] ;
+  
+}
+
+.portfolio-repo-btn-div {
+  @apply w-full flex justify-center;
+}

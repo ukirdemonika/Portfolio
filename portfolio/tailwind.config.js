@@ -11,8 +11,12 @@ export default {
         'agustina': ['Agustina Regular', 'cursive'],
          'google-sans': ['Google Sans Regular', 'sans-serif']
       },
+      screens: {
+        'lg-desktop': '1380px', 
+      }
       
   },
+ 
   plugins: [],
 }
 }

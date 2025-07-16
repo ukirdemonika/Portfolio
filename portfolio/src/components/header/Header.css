@@ -9,7 +9,7 @@
 }
 .header .menu li a.active {
     color: #111827;
-    text-shadow: 0 0 1px currentColor; /* The "fake bold" trick */
+    text-shadow: 0 0 1px currentColor; 
     
 }
 .header .logo { @apply float-left block text-xl mt-2.5 leading-normal no-underline text-[1.5em]; }
@@ -57,7 +57,7 @@
 }
 .header .menu-icon.open .navicon:before,
 .header .menu-icon.open .navicon:after {
-  background: #1f2937 !important; /* Use your desired color, here Tailwind's gray-800 */
+  background: #1f2937 !important; 
 }
 
 
@@ -72,15 +72,29 @@
 }
 
 /* Responsive Styles (for desktop view) */
-@media (min-width: 768px) {
-  .header { @apply flex items-center justify-between; }
-  .header li { @apply float-left; }
+@media (min-width: 48em) {
+  .header { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+  .header li {
+    float:left;
+  }
   .header .menu, .header .menu.menu-open {
     /* On desktop, the menu is always visible and does not need to transition */
-    @apply max-h-full mt-0 clear-none;
+    max-height: none;
   }
   .header .menu-icon {
     /* Hide hamburger icon on desktop */
-    @apply hidden;
+    display: none;
+  }
+}
+@media (max-width: 960px) and (min-width: 768px) {
+  .header {
+    font-size: 12px;
+  }
+  .header .menu {
+    max-height: none;
   }
 }
