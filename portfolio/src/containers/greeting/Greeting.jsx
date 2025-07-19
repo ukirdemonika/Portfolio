@@ -63,8 +63,13 @@ const Greeting = ({ theme }) => {
             </p>
             <Socialmedia theme={theme}></Socialmedia>
             <div className="portfolio-repo-btn-div">
-              <Button />
-
+              <Button
+              text= "⭐ See my Resume" 
+              newTab={true}
+              href={greeting.resumeLink}
+              className="portFolio-repo-btn"
+              theme={theme}
+              />
             </div>
           </div>
         </div>
@@ -72,7 +77,6 @@ const Greeting = ({ theme }) => {
           {<img
             alt="Monika Jondhale"
             src={monikaImg}
-            
             className="profile-image"
           />}
         </div>

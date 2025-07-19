@@ -1,0 +1,22 @@
+.resume-button{
+    background-color:var(--btn-bg-color);
+    color:var(--btn-text-color);
+    border:1px solid var(--btn-bg-color);
+
+    /* Base style for mobile first */
+    @apply block w-max no-underline rounded-md cursor-pointer font-medium text-center py-[12px] px-[18px] text-[15px] mt-5 tracking-[2px] font-google-sans transition-all duration-300 ease-in-out;
+}
+.resume-button:hover{
+    background-color:var(--btn-text-color);
+    color:var(--btn-bg-color);
+}
+/* Responsive style for Desktop-screen 768px and wider */
+.resume-button{
+    @apply md:text-lg md:py-[13px] md:px-[12px];
+}
+
+@media (max-width:320px){
+    .resume-button{
+        @apply text-xs;
+    }
+}

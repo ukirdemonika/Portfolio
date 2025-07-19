@@ -6,7 +6,7 @@
 }
 .social-media-link-button i{
     @apply w-[2.6rem] mx-[5px] mt-0 mb-[10px] h-[2.5rem] cursor-pointer text-[1.3rem] relative 
-    text-center leading-[2.6rem] inline-block rounded-[0.6rem] select-none;
+    text-center leading-[2.6rem] inline-block rounded-full select-none;
 }
 
 @media (max-width : 768px){

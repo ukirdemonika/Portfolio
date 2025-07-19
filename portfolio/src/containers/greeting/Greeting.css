@@ -21,23 +21,27 @@
   @screen sm {
     width: 300px;
     height: 300px;
+    
   }
   @screen md {
     width: 400px;
     height: 400px;
+   
   }
 }
 .greeting-text {  
-  @apply mt-0 text-center text-3xl font-google-sans leading-[1.1] mb-0 md:mt-10 md:text-left md:text-[50px] lg-desktop:text-[70px];
+  @apply mt-0 text-center text-3xl font-google-sans leading-[1.1]  md:mt-10 md:text-justify md:text-[50px] lg-desktop:text-[70px];
 }
 .greeting-pronouns {  
-  @apply mt-0 text-center text-[25px] leading-[30px] font-google-sans font-bold italic md:text-left md:text-[30px];
+  @apply mt-0 text-center text-[25px] leading-[30px] font-google-sans font-bold italic md:text-justify md:text-[30px];
 }
 .greeting-text-p {
-  @apply text-center text-base leading-normal font-google-sans mr-0 font-medium  md:text-left md:text-[20px] md:mr-10 lg-desktop:text-[28px] lg-desktop:leading-[28px] ;
+  @apply text-base leading-normal font-google-sans mr-0 font-medium  md:text-justify md:text-[20px] md:mr-10 lg-desktop:text-[28px] lg-desktop:leading-[28px] 
+  mb-5 mt-5 text-justify;
   
 }
 
+
 .portfolio-repo-btn-div {
-  @apply w-full flex justify-center;
+  @apply w-full flex md:justify-start justify-center;
 }
