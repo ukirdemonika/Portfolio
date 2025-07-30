@@ -29,7 +29,7 @@ const Header = (props) => {
   };
 
   const navItems = [
-    { id: 1, name: 'Home', path: '/home' },
+    { id: 1, name: 'Home', path: '/' },
     { id: 2, name: 'Experience', path: '/experience' },
     { id: 3, name: 'Education', path: '/education' },
     { id: 4, name: 'Projects', path: '/projects' },

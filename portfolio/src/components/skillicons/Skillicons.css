@@ -1,0 +1,6 @@
+.skill-icon-container{
+    @apply flex h-full w-fit;
+}
+.skill-icon{
+    @apply h-full mr-4 last:mr-0 max-2xl:mr-3 max-md:mr-2;
+}

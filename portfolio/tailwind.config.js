@@ -12,8 +12,12 @@ export default {
          'google-sans': ['Google Sans Regular', 'sans-serif']
       },
       screens: {
-        'lg-desktop': '1380px', 
-      }
+        'lg-desktop': '1380px',
+        'whatido-xl': '1100px',
+        'whatido-lg': '930px',
+        'whatido-md': '850px',
+        
+      },
       
   },
  
